@@ -18,6 +18,11 @@ func factorial(n int) int {
     return n * factorial(n-1)
 }
 
+func isEven(number int) bool {
+    return number%2 == 0
+}
+
+
 func main() {
 	lowercaseString := "vinay kapoor"
 	uppercaseString := vinay(lowercaseString)
@@ -25,4 +30,12 @@ func main() {
 
 	result := factorial(5)
    	fmt.Printf("Factorial of 5 is %d\n", result)
+
+	  num := 6
+    if isEven(num) {
+        fmt.Printf("%d is even.\n", num)
+    } else {
+        fmt.Printf("%d is odd.\n", num)
+    }
+
 }
