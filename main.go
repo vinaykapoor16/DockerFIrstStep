@@ -35,6 +35,22 @@ func fibonacci(n int) []int {
     return sequence
 }
 
+func isPalindrome(str string) bool {
+   
+    cleanedStr := strings.ReplaceAll(strings.ToLower(str), " ", "")
+
+    
+    for i, j := 0, len(cleanedStr)-1; i < j; {
+        if cleanedStr[i] != cleanedStr[j] {
+            return false
+        }
+        i++
+        j--
+    }
+
+    return true
+}
+
 
 
 func main() {
@@ -54,4 +70,12 @@ func main() {
  numTerms := 10
     fibSeq := fibonacci(numTerms)
     fmt.Printf("Fibonacci Sequence up to %d terms: %v\n", numTerms, fibSeq)
+
+	inputStr := "A man a plan a canal Panama"
+    if isPalindrome(inputStr) {
+        fmt.Printf("\"%s\" is a palindrome.\n", inputStr)
+    } else {
+        fmt.Printf("\"%s\" is not a palindrome.\n", inputStr)
+    }
+
 }
